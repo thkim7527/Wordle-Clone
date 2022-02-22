@@ -1,0 +1,19 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    background-color: lightgrey;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+
+    font-size: 75px;
+    user-select: none;
+    text-transform: uppercase;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+}
