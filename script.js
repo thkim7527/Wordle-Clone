@@ -21,6 +21,7 @@ function handleKeyPress(event) {
 
 function next() {
     if (blockIndex === 4 && rowIndex === 5) { //On Game End
+        check();
         document.removeEventListener("keypress", handleKeyPress);
     } else if (blockIndex === 4) { //Go Next Line
         check();
