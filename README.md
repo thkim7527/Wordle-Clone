@@ -6,7 +6,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 
 # To Do
 ## Game
-- [v] JavaScript
+- [x] JavaScript
 - [ ] JavaScript - End of Body vs. defer Tag
 - [ ] Check Answer By Row
 
