@@ -1,4 +1,4 @@
-const answer = "clone";
+const answer = "trove";
 
 let rowIndex = 0;
 let blockIndex = 0;
@@ -14,7 +14,7 @@ function handleKeyPress(event) {
     if (key.match(/^[A-Za-z]+$/)) { //On Alphabet Pressed
         const block = getBlocks()[blockIndex];
 
-        block.innerText = key;
+        block.innerHTML = key;
         next();
     }
 }
@@ -23,9 +23,23 @@ function next() {
     if (blockIndex === 4 && rowIndex === 4) { //On Game End
         document.removeEventListener("keypress", handleKeyPress);
     } else if (blockIndex === 4) { //Go Next Line
+        check();
         blockIndex = 0;
         rowIndex++;
     } else { //Go Next Block
         blockIndex++;
     }
+}
+
+function check() {
+    const blocks = getBlocks();
+    blocks.forEach((block, blockIndex) => {
+        answer.split("").forEach((char, charIndex) => {
+            if (block.innerHTML === char && blockIndex === charIndex) {
+                block.style.color = "green";
+            } else if (block.innerHTML === char) {
+                block.style.color = "yellow";
+            }
+        });
+    });
 }

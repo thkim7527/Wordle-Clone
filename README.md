@@ -8,7 +8,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 ## Game
 - [x] JavaScript
 - [ ] JavaScript - End of Body vs. defer Tag
-- [ ] Check Answer By Row
+- [x] Check Answer By Row
 
 ## Layout
 - [ ] Keymap
