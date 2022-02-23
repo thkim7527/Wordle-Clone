@@ -18,3 +18,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [ ] Text Align in Block
 - [ ] More Beautiful Font
 - [ ] Dark Theme
+
+## Bugs
+- [ ] Enter on keypress Events
+- [ ] Blocks of Last Row are not checked

@@ -20,7 +20,7 @@ function handleKeyPress(event) {
 }
 
 function next() {
-    if (blockIndex === 4 && rowIndex === 4) { //On Game End
+    if (blockIndex === 4 && rowIndex === 5) { //On Game End
         document.removeEventListener("keypress", handleKeyPress);
     } else if (blockIndex === 4) { //Go Next Line
         check();
