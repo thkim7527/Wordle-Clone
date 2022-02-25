@@ -1,4 +1,4 @@
-const answer = "trove";
+const answer = "vivid";
 
 let rowIndex = 0;
 let blockIndex = 0;
@@ -7,29 +7,49 @@ const board = document.querySelector("#board");
 const rows = board.querySelectorAll(".row");
 const getBlocks = () => rows[rowIndex].querySelectorAll(".block");
 
-document.addEventListener("keypress", handleKeyPress);
+document.addEventListener("keydown", handleKeyDown);
 
-function handleKeyPress(event) {
+function handleKeyDown(event) {
     const key = event.key;
-    if (key.match(/^[A-Za-z]+$/)) { //On Alphabet Pressed
-        const block = getBlocks()[blockIndex];
 
-        block.innerHTML = key;
-        next();
+    if (key.length === 1 && key.match(/^[A-Za-z]+$/)) {
+        nextBlock(key);
+    } else if (key === "Backspace") {
+        prevBlock();
+    } else if (key === "Enter") {
+        nextRow();
     }
 }
 
-function next() {
-    if (blockIndex === 4 && rowIndex === 5) { //On Game End
-        check();
-        document.removeEventListener("keypress", handleKeyPress);
-    } else if (blockIndex === 4) { //Go Next Line
-        check();
-        blockIndex = 0;
-        rowIndex++;
-    } else { //Go Next Block
+function nextBlock(key) {
+    if (blockIndex < 5) {
+        getBlocks()[blockIndex].innerHTML = key;
         blockIndex++;
     }
+}
+
+function prevBlock() {
+    if (blockIndex > 0) {
+        blockIndex--;
+        getBlocks()[blockIndex].innerHTML = "";
+    }
+}
+
+function nextRow() {
+    if (blockIndex === 5) {
+        check();
+        blockIndex = 0;
+
+        if (rowIndex < 5) {
+            rowIndex++;
+        } else {
+            gameEnd();
+        }
+    }
+}
+
+function gameEnd() {
+    document.removeEventListener("keydown", handleKeyDown);
 }
 
 function check() {
@@ -43,4 +63,5 @@ function check() {
             }
         });
     });
+    alert("Check!");
 }
