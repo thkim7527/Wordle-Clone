@@ -16,7 +16,8 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [ ] Board align in body 
 - [ ] Text align in block
 - [ ] More beautiful font
-- [ ] Dark theme
+- [x] Dark theme
+- [x] Animation on toggle dark theme
 - [ ] Show checked answer by CSS class
 
 ## Bugs
