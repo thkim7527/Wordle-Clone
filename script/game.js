@@ -17,7 +17,9 @@ function handleKeyDown(event) {
     } else if (key === "Backspace") {
         prevBlock();
     } else if (key === "Enter") {
-        nextRow();
+        if (!check()) { //sjdkfjsldjflksdjfㄴ아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+            nextRow();
+        }
     }
 }
 
@@ -37,8 +39,6 @@ function prevBlock() {
 
 function nextRow() {
     if (blockIndex === 5) {
-        check();
-
         if (rowIndex < 5) {
             blockIndex = 0;
             rowIndex++;
@@ -52,8 +52,17 @@ function gameEnd() {
     document.removeEventListener("keydown", handleKeyDown);
 }
 
-function check() {
+async function check() {
     const blocks = getBlocks();
+    const word = getWord(blocks);
+
+    const dict = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+    console.log(dict);
+    if (!dict.ok) {
+        alert("Wrong Word!");
+        return false;
+    }
+
     blocks.forEach((block, blockIndex) => {
         ANSWER.split("").forEach((char, charIndex) => {
             if (block.innerHTML === char && blockIndex === charIndex) {
@@ -65,4 +74,14 @@ function check() {
             }
         });
     });
+
+    return true;
+}
+
+function getWord(blocks) {
+    let word = "";
+    blocks.forEach(block => {
+        word += block.innerHTML;
+    });
+    return word;
 }

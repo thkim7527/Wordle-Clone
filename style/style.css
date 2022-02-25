@@ -10,7 +10,9 @@ body {
     justify-content: center;
 
     background-color: var(--background-color);
-    transition: background-color 0.3s linear;
+    transition: 
+        background-color 0.3s linear,
+        color 0.3s linear;
 }
 
 #dark {
@@ -22,6 +24,10 @@ body {
     right: 0px;
 
     font-size: 50px;
+
+    background: none;
+    border: none;
+    padding: 0px 0px 0px 0px;
 }
 
 .row {
@@ -44,4 +50,16 @@ body {
     text-align: center;
     vertical-align: middle;
     line-height: 100px;
+}
+
+.block.bad {
+    color: var(--bad);
+}
+
+.block.good {
+    color: var(--good);
+}
+
+.block.perfect {
+    color: var(--perfect);
 }

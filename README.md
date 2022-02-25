@@ -20,7 +20,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [x] More beautiful font
 - [x] Dark theme
 - [x] Dark theme button
-- [ ] Save theme mode
+- [ ] Save theme mode & prefers-color-scheme
 - [x] Animation on toggle dark theme
 - [x] Change dark theme by change style link tag
 - [x] Show checked answer by CSS class
@@ -29,3 +29,12 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [x] Enter on keypress event
 - [x] Blocks of last row are not checked
 - [ ] Wrong answer check when the answer has the same letters
+
+# To Learn
+## HTML
+- [ ] Meta tag
+
+## CSS
+- [ ] CSS selector
+- [ ] Media query
+- [ ] Color Scheme

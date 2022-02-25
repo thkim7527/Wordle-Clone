@@ -3,23 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark">
+        <meta name="theme-color" content="white">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-
+        
         <link rel="stylesheet" href="style/style.css">
-        <link id="theme" rel="stylesheet" href="style/light.css">
-        <link id="theme" rel="stylesheet" href="style/dark.css">
-
+        <link rel="stylesheet" href="style/light.css">
+        <link rel="stylesheet" href="style/dark.css">
+        
         <script defer src="script/game.js"></script>
         <script defer src="script/dark.js"></script>
         
         <title>Wordle Clone</title>
     </head>
-    <body>
-        <span id="dark">🌙</span>
-        
+    <body>        
         <div id="board">
             <div class="row">
                 <div class="block"></div>
@@ -64,5 +64,7 @@
                 <div class="block"></div>
             </div>
         </div>
+        
+        <button id="dark" title="Toggle dark theme">🌙</button>
     </body>
 </html>

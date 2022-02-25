@@ -1,17 +1,11 @@
-body.dark {
-    --background-color: #212121;
-    --block-color: #616161;
-    --text-color: #EEEEEE;
-}
-
-.dark > .block.bad {
-    color: #BDBDBD;
-}
-
-.dark > .block.good {
-    color: #FFF176;
-}
-
-.dark > .block.perfect {
-    color: #66BB6A;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #212121;
+        --block-color: #616161;
+        --text-color: #EEEEEE;
+        
+        --bad: #BDBDBD;
+        --good: #FFF176;
+        --perfect: #66BB6A;
+    }
 }
