@@ -11,12 +11,15 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [x] Check answer by row
 - [ ] Keymap
 - [x] Enter and delete
+- [x] Separate CSS and JavaScript files
 
 ## Style
-- [ ] Board align in body 
-- [ ] Text align in block
-- [ ] More beautiful font
+- [x] Board align in body 
+- [x] Text align in block
+- [x] More beautiful font
 - [x] Dark theme
+- [ ] Dark theme button
+- [ ] Save theme mode
 - [x] Animation on toggle dark theme
 - [ ] Show checked answer by CSS class
 
