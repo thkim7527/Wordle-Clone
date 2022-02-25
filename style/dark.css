@@ -1,17 +1,17 @@
-body {
+body.dark {
     --background-color: #212121;
     --block-color: #616161;
     --text-color: #EEEEEE;
 }
 
-.block.bad {
+.dark > .block.bad {
     color: #BDBDBD;
 }
 
-.block.good {
+.dark > .block.good {
     color: #FFF176;
 }
 
-.block.perfect {
+.dark > .block.perfect {
     color: #66BB6A;
 }

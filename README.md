@@ -23,7 +23,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [ ] Save theme mode
 - [x] Animation on toggle dark theme
 - [x] Change dark theme by change style link tag
-- [ ] Show checked answer by CSS class
+- [x] Show checked answer by CSS class
 
 ## Bugs
 - [x] Enter on keypress event
