@@ -7,18 +7,19 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 # To Do
 ## Game
 - [x] JavaScript
-- [x] JavaScript - End of Body vs. defer Tag
-- [x] Check Answer By Row
+- [x] JavaScript - end of body vs. defer
+- [x] Check answer by row
 - [ ] Keymap
-- [ ] Enter and Delete
+- [x] Enter and delete
 
 ## Style
-- [ ] Board Align in Body 
-- [ ] Text Align in Block
-- [ ] More Beautiful Font
-- [ ] Dark Theme
-- [ ] Show Checked Answer By CSS Class
+- [ ] Board align in body 
+- [ ] Text align in block
+- [ ] More beautiful font
+- [ ] Dark theme
+- [ ] Show checked answer by CSS class
 
 ## Bugs
-- [ ] Enter on keypress Events
-- [v] Blocks of Last Row are not checked
+- [x] Enter on keypress event
+- [x] Blocks of last row are not checked
+- [ ] Wrong answer check when the answer has the same letters

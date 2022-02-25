@@ -1,4 +1,4 @@
-const answer = "vivid";
+const answer = "trove";
 
 let rowIndex = 0;
 let blockIndex = 0;
@@ -38,9 +38,9 @@ function prevBlock() {
 function nextRow() {
     if (blockIndex === 5) {
         check();
-        blockIndex = 0;
 
         if (rowIndex < 5) {
+            blockIndex = 0;
             rowIndex++;
         } else {
             gameEnd();
@@ -63,5 +63,4 @@ function check() {
             }
         });
     });
-    alert("Check!");
 }
