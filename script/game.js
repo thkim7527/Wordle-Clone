@@ -1,4 +1,4 @@
-const answer = "trove";
+const ANSWER = "trove";
 
 let rowIndex = 0;
 let blockIndex = 0;
@@ -55,11 +55,13 @@ function gameEnd() {
 function check() {
     const blocks = getBlocks();
     blocks.forEach((block, blockIndex) => {
-        answer.split("").forEach((char, charIndex) => {
+        ANSWER.split("").forEach((char, charIndex) => {
             if (block.innerHTML === char && blockIndex === charIndex) {
-                block.style.color = "green";
+                block.classList.toggle("perfect");
             } else if (block.innerHTML === char) {
-                block.style.color = "yellow";
+                block.classList.toggle("good");
+            } else {
+                block.classList.toggle("bad");
             }
         });
     });

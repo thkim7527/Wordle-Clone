@@ -12,15 +12,17 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [ ] Keymap
 - [x] Enter and delete
 - [x] Separate CSS and JavaScript files
+- [ ] Check word in dictionary
 
 ## Style
 - [x] Board align in body 
 - [x] Text align in block
 - [x] More beautiful font
 - [x] Dark theme
-- [ ] Dark theme button
+- [x] Dark theme button
 - [ ] Save theme mode
 - [x] Animation on toggle dark theme
+- [x] Change dark theme by change style link tag
 - [ ] Show checked answer by CSS class
 
 ## Bugs

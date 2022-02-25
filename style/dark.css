@@ -1,0 +1,17 @@
+body {
+    --background-color: #212121;
+    --block-color: #616161;
+    --text-color: #EEEEEE;
+}
+
+.block.bad {
+    color: #BDBDBD;
+}
+
+.block.good {
+    color: #FFF176;
+}
+
+.block.perfect {
+    color: #66BB6A;
+}
