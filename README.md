@@ -6,7 +6,8 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 
 # To Do
 ## Game
-- [ ] Keymap
+- [ ] End game when word correct
+- [ ] Display modal when word is not in dictionary
 <!--
 - [x] JavaScript
 - [x] JavaScript - end of body vs. defer

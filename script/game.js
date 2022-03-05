@@ -6,7 +6,15 @@ let blockIndex = 0;
 const board = document.querySelector("#board");
 const rows = board.querySelectorAll(".row");
 const getBlocks = () => rows[rowIndex].querySelectorAll(".block");
+const getWord = () => {
+    let word = "";
+    getBlocks().forEach(block => {
+        word += block.innerHTML;
+    });
+    return word;
+};
 
+//Handle Event
 document.addEventListener("keydown", handleKeyDown);
 
 function handleKeyDown(event) {
@@ -17,12 +25,11 @@ function handleKeyDown(event) {
     } else if (key === "Backspace") {
         prevBlock();
     } else if (key === "Enter") {
-        if (!check()) { //sjdkfjsldjflksdjfㄴ아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
-            nextRow();
-        }
+        nextRow();
     }
 }
 
+//Go to Block & Row
 function nextBlock(key) {
     if (blockIndex < 5) {
         getBlocks()[blockIndex].innerHTML = key;
@@ -38,32 +45,32 @@ function prevBlock() {
 }
 
 function nextRow() {
-    if (blockIndex === 5) {
-        if (rowIndex < 5) {
+    if (blockIndex === 5 && rowIndex < 5) {
+        if (checkWord()) {
+            checkAnswer();
             blockIndex = 0;
             rowIndex++;
         } else {
-            gameEnd();
+            alert("Wrong Word!");
         }
     }
 }
 
-function gameEnd() {
-    document.removeEventListener("keydown", handleKeyDown);
-}
-
-async function check() {
+//Check Word & Answer
+async function checkWord() {
     const blocks = getBlocks();
     const word = getWord(blocks);
 
     const dict = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-    console.log(dict);
     if (!dict.ok) {
-        alert("Wrong Word!");
         return false;
+    } else {
+        return true;
     }
+}
 
-    blocks.forEach((block, blockIndex) => {
+function checkAnswer() {
+    getBlocks().forEach((block, blockIndex) => {
         ANSWER.split("").forEach((char, charIndex) => {
             if (block.innerHTML === char && blockIndex === charIndex) {
                 block.classList.toggle("perfect");
@@ -74,14 +81,9 @@ async function check() {
             }
         });
     });
-
-    return true;
 }
 
-function getWord(blocks) {
-    let word = "";
-    blocks.forEach(block => {
-        word += block.innerHTML;
-    });
-    return word;
+//End Game
+function gameEnd() {
+    document.removeEventListener("keydown", handleKeyDown);
 }
