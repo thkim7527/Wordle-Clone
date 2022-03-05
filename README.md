@@ -8,6 +8,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 ## Game
 - [ ] End game when word correct
 - [ ] Display modal when word is not in dictionary
+- [ ] End game on last line
 <!--
 - [x] JavaScript
 - [x] JavaScript - end of body vs. defer

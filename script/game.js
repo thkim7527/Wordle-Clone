@@ -44,12 +44,17 @@ function prevBlock() {
     }
 }
 
-function nextRow() {
-    if (blockIndex === 5 && rowIndex < 5) {
-        if (checkWord()) {
-            checkAnswer();
-            blockIndex = 0;
-            rowIndex++;
+async function nextRow() {
+    if (blockIndex === 5) {
+        if (await checkWord()) {
+            if (rowIndex < 5) {
+                checkAnswer();
+                blockIndex = 0;
+                rowIndex++;
+            } else {
+                checkAnswer();
+                endGame();
+            }
         } else {
             alert("Wrong Word!");
         }
@@ -62,10 +67,12 @@ async function checkWord() {
     const word = getWord(blocks);
 
     const dict = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-    if (!dict.ok) {
-        return false;
-    } else {
+    console.dir(dict);
+    console.dir(dict.ok);
+    if (dict.ok) {
         return true;
+    } else {
+        return false;
     }
 }
 
@@ -84,6 +91,6 @@ function checkAnswer() {
 }
 
 //End Game
-function gameEnd() {
+function endGame() {
     document.removeEventListener("keydown", handleKeyDown);
 }
