@@ -1,12 +1,18 @@
 let isDark = false;
-const darkToggle = document.querySelector("#dark");
+const button = document.querySelector("#dark");
+const body = document.querySelector("body");
 const themeColor = document.querySelector("meta[name=theme-color]");
 
-darkToggle.addEventListener("click", (event) => {
+button.addEventListener("click", (event) => {
     isDark = !isDark;
-    event.target.innerHTML = isDark ? "☀️" : "🌙";
-    event.target.blur();
 
+    //button
+    button.innerHTML = isDark ? "☀️" : "🌙";
+    button.blur();
+
+    //body
+    isDark ? body.classList.replace("light", "dark") : body.classList.replace("dark", "light");
+
+    //theme-color
     themeColor.content = isDark ? "black" : "white";
-    console.log(themeColor.content);
 });
