@@ -1,0 +1,16 @@
+.modal {
+    position:absolute;
+    width: 400px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: var(--background-color);
+}
+
+.content {
+    opacity: 1;
+    color: var(--text-color);
+}

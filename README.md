@@ -8,7 +8,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 ## Game
 - [ ] End game when word correct
 - [ ] Display modal when word is not in dictionary
-- [ ] End game on last line
+- [x] End game on last line
 <!--
 - [x] JavaScript
 - [x] JavaScript - end of body vs. defer
@@ -20,6 +20,9 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 
 ## Style
 - [ ] Save theme mode & prefers-color-scheme
+- [ ] Responsive design
+- [ ] Use @import
+- [ ] Use Material Icon
 <!--
 - [x] Board align in body
 - [x] Text align in block
@@ -46,3 +49,5 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 - [ ] CSS selector
 - [ ] Media query
 - [ ] Color Scheme
+- [ ] Responsive design
+- [ ] Flex & Grid
