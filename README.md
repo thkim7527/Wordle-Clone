@@ -19,7 +19,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 -->
 
 ## Style
-- [ ] Save theme mode & prefers-color-scheme
+- [x] Save theme mode & prefers-color-scheme
 - [ ] Responsive design
 - [ ] Use @import
 - [ ] Use Material Icon
@@ -47,7 +47,7 @@ Clone Wordle with HTML, CSS and Vanilla JavaScript
 
 ## CSS
 - [ ] CSS selector
-- [ ] Media query
-- [ ] Color Scheme
+- [x] Media query
+- [x] Color Scheme
 - [ ] Responsive design
-- [ ] Flex & Grid
+- [x] Flex & Grid

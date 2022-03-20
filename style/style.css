@@ -1,3 +1,6 @@
+@import url("./light.css");
+@import url("./dark.css");
+
 html, body {
     margin: 0px;
     height: 100%;

@@ -1,18 +1,44 @@
-let isDark = false;
-const button = document.querySelector("#dark");
-const body = document.querySelector("body");
-const themeColor = document.querySelector("meta[name=theme-color]");
+let isLight;
+const toggle = document.querySelector("#dark");
 
-button.addEventListener("click", (event) => {
-    isDark = !isDark;
-
-    //button
-    button.innerHTML = isDark ? "☀️" : "🌙";
-    button.blur();
-
-    //body
-    isDark ? body.classList.replace("light", "dark") : body.classList.replace("dark", "light");
-
-    //theme-color
-    themeColor.content = isDark ? "black" : "white";
+window.addEventListener("load", () => {
+    loadTheme();
+    saveTheme();
 });
+
+window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (event) => {
+    isLight = event.matches;
+    saveTheme();
+});
+
+toggle.addEventListener("click", () => {
+    isLight = !isLight;
+    saveTheme();
+});
+
+function saveTheme() {
+    localStorage.setItem("theme", isLight);
+
+    if (isLight) {
+        document.body.classList.add("light");
+        document.body.classList.remove("dark");
+    } else {
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+    }
+}
+
+function loadTheme() {
+    const userTheme = localStorage.getItem("theme");
+    const prefersTheme = window.matchMedia("(prefers-color-scheme: light)").matches;
+
+    if (userTheme === null) {
+        isLight = prefersTheme;
+    } else {
+        if (userTheme === "true") {
+            isLight = true;
+        } else if (userTheme === "false") {
+            isLight = false;
+        }
+    }
+}
